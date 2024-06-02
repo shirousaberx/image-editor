@@ -1,0 +1,1134 @@
+object Form3: TForm3
+  Left = 562
+  Height = 714
+  Top = 66
+  Width = 673
+  Caption = 'Program Pengolah Citra'
+  ClientHeight = 714
+  ClientWidth = 673
+  OnCreate = FormCreate
+  LCLVersion = '2.2.0.1'
+  object PageControl1: TPageControl
+    Left = 24
+    Height = 272
+    Top = 72
+    Width = 624
+    ActivePage = TabSheetGeneral
+    ParentFont = False
+    TabIndex = 0
+    TabOrder = 0
+    OnChange = PageControl1Change
+    object TabSheetGeneral: TTabSheet
+      Caption = 'General'
+      ClientHeight = 244
+      ClientWidth = 616
+      ParentFont = False
+      object ComboBoxGeneral: TComboBox
+        Left = 64
+        Height = 23
+        Top = 16
+        Width = 176
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'Basic'
+          'Scaling'
+          'Kuantisasi'
+        )
+        OnChange = ComboBoxGeneralChange
+        ParentFont = False
+        TabOrder = 0
+        Text = 'Basic'
+      end
+      object LabelOperasi: TLabel
+        Left = 8
+        Height = 17
+        Top = 16
+        Width = 55
+        Caption = 'Operasi :'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -13
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object PanelScaling: TPanel
+        Left = 248
+        Height = 216
+        Top = 16
+        Width = 360
+        BorderStyle = bsSingle
+        ClientHeight = 212
+        ClientWidth = 356
+        ParentFont = False
+        TabOrder = 1
+        Visible = False
+        object RadioGroupInisialisasi: TRadioGroup
+          Left = 8
+          Height = 64
+          Top = 8
+          Width = 113
+          AutoFill = True
+          Caption = 'Inisialisasi'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 1
+          ClientHeight = 44
+          ClientWidth = 109
+          ItemIndex = 0
+          Items.Strings = (
+            'Hitam'
+            'Putih'
+          )
+          ParentFont = False
+          TabOrder = 0
+        end
+        object RadioGroupPerbaikan: TRadioGroup
+          Left = 136
+          Height = 80
+          Top = 8
+          Width = 185
+          AutoFill = True
+          Caption = 'Perbaikan'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 1
+          ClientHeight = 60
+          ClientWidth = 181
+          ItemIndex = 0
+          Items.Strings = (
+            'Tanpa Perbaikan'
+            'Replikasi'
+            'Interpolasi'
+          )
+          ParentFont = False
+          TabOrder = 1
+        end
+        object Label1: TLabel
+          Left = 16
+          Height = 15
+          Top = 96
+          Width = 33
+          Caption = 'Skala :'
+          ParentFont = False
+        end
+        object TrackBarSkalaX: TTrackBar
+          Left = 8
+          Height = 25
+          Top = 112
+          Width = 298
+          Max = 50
+          Min = 1
+          OnChange = TrackBarSkalaXChange
+          Position = 10
+          ParentFont = False
+          TabOrder = 2
+        end
+        object LabelSkalaX: TLabel
+          Left = 312
+          Height = 15
+          Top = 112
+          Width = 27
+          Caption = 'X = 1'
+          ParentFont = False
+        end
+        object TrackBarSkalaY: TTrackBar
+          Left = 8
+          Height = 25
+          Top = 136
+          Width = 298
+          Max = 50
+          Min = 1
+          OnChange = TrackBarSkalaYChange
+          Position = 10
+          ParentFont = False
+          TabOrder = 3
+        end
+        object LabelSkalaY: TLabel
+          Left = 312
+          Height = 15
+          Top = 136
+          Width = 27
+          Caption = 'Y = 1'
+          ParentFont = False
+        end
+        object ButtonApplyScaling: TButton
+          Left = 16
+          Height = 25
+          Top = 168
+          Width = 75
+          Caption = 'Apply'
+          OnClick = ButtonApplyScalingClick
+          ParentFont = False
+          TabOrder = 4
+        end
+      end
+      object PanelKuantisasi: TPanel
+        Left = 216
+        Height = 184
+        Top = 48
+        Width = 392
+        BorderStyle = bsSingle
+        ClientHeight = 180
+        ClientWidth = 388
+        ParentFont = False
+        TabOrder = 2
+        Visible = False
+        object ButtonApplyKuantisasi: TButton
+          Left = 16
+          Height = 25
+          Top = 120
+          Width = 75
+          Caption = 'Apply'
+          OnClick = ButtonApplyKuantisasiClick
+          ParentFont = False
+          TabOrder = 0
+        end
+        object TrackBarKuantisasiR: TTrackBar
+          Left = 8
+          Height = 25
+          Top = 32
+          Width = 180
+          Max = 8
+          Min = 1
+          OnChange = TrackBarKuantisasiRChange
+          Position = 5
+          ParentFont = False
+          TabOrder = 1
+        end
+        object TrackBarKuantisasiG: TTrackBar
+          Left = 8
+          Height = 25
+          Top = 62
+          Width = 180
+          Max = 8
+          Min = 1
+          OnChange = TrackBarKuantisasiGChange
+          Position = 6
+          ParentFont = False
+          TabOrder = 2
+        end
+        object TrackBarKuantisasiB: TTrackBar
+          Left = 8
+          Height = 25
+          Top = 88
+          Width = 180
+          Max = 8
+          Min = 1
+          OnChange = TrackBarKuantisasiBChange
+          Position = 5
+          ParentFont = False
+          TabOrder = 3
+        end
+        object LabelKuantisasiR: TLabel
+          Left = 192
+          Height = 15
+          Top = 32
+          Width = 39
+          Caption = 'R : 5 bit'
+          ParentFont = False
+        end
+        object LabelKuantisasiG: TLabel
+          Left = 191
+          Height = 15
+          Top = 62
+          Width = 40
+          Caption = 'G : 6 bit'
+          ParentFont = False
+        end
+        object LabelKuantisasiB: TLabel
+          Left = 191
+          Height = 15
+          Top = 88
+          Width = 39
+          Caption = 'B : 5 bit'
+          ParentFont = False
+        end
+        object RadioGroupKonversiWarna: TRadioGroup
+          Left = 240
+          Height = 105
+          Top = 8
+          Width = 129
+          AutoFill = True
+          Caption = 'Konversi Warna'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 1
+          ClientHeight = 85
+          ClientWidth = 125
+          ItemIndex = 0
+          Items.Strings = (
+            'Batas Atas'
+            'Balanced'
+            'Batas Bawah'
+          )
+          ParentFont = False
+          TabOrder = 4
+        end
+        object Label4: TLabel
+          Left = 16
+          Height = 15
+          Top = 8
+          Width = 59
+          Caption = 'Kuantisasi :'
+          ParentFont = False
+        end
+      end
+      object PanelBasic: TPanel
+        Left = 14
+        Height = 184
+        Top = 48
+        Width = 594
+        BorderStyle = bsSingle
+        ClientHeight = 180
+        ClientWidth = 590
+        TabOrder = 3
+        object GrayButton: TButton
+          Left = 136
+          Height = 25
+          Top = 8
+          Width = 75
+          Caption = 'Gray'
+          OnClick = GrayButtonClick
+          TabOrder = 0
+        end
+        object Red: TButton
+          Left = 8
+          Height = 25
+          Top = 8
+          Width = 75
+          Caption = 'Red'
+          OnClick = RedClick
+          TabOrder = 1
+        end
+        object Green: TButton
+          Left = 8
+          Height = 25
+          Top = 48
+          Width = 75
+          Caption = 'Green'
+          OnClick = GreenClick
+          TabOrder = 2
+        end
+        object Blue: TButton
+          Left = 8
+          Height = 25
+          Top = 88
+          Width = 75
+          Caption = 'Blue'
+          OnClick = BlueClick
+          TabOrder = 3
+        end
+        object InversButton: TButton
+          Left = 136
+          Height = 25
+          Top = 42
+          Width = 75
+          Caption = 'Invers'
+          OnClick = InversButtonClick
+          TabOrder = 4
+        end
+        object Biner: TButton
+          Left = 264
+          Height = 25
+          Top = 8
+          Width = 75
+          Caption = 'Biner'
+          OnClick = BinerClick
+          TabOrder = 5
+        end
+        object BinerTrackbar: TTrackBar
+          Left = 343
+          Height = 25
+          Top = 8
+          Width = 212
+          Max = 255
+          OnChange = BinerTrackbarChange
+          Position = 127
+          TabOrder = 6
+        end
+        object BrightnessBtn: TButton
+          Left = 264
+          Height = 25
+          Top = 42
+          Width = 75
+          Caption = 'Brightness'
+          OnClick = BrightnessBtnClick
+          TabOrder = 7
+        end
+        object BrightnessTrackbar: TTrackBar
+          Left = 343
+          Height = 25
+          Top = 42
+          Width = 212
+          Max = 255
+          Min = -255
+          OnChange = BrightnessTrackbarChange
+          Position = 0
+          TabOrder = 8
+        end
+        object ContrastBtn: TButton
+          Left = 264
+          Height = 25
+          Top = 104
+          Width = 75
+          Caption = 'Contrast'
+          OnClick = ContrastBtnClick
+          TabOrder = 9
+        end
+        object P_Koefisien: TTrackBar
+          Left = 369
+          Height = 25
+          Top = 88
+          Width = 187
+          Max = 255
+          OnChange = P_KoefisienChange
+          Position = 127
+          TabOrder = 10
+        end
+        object G_Intensitas: TTrackBar
+          Left = 369
+          Height = 25
+          Top = 128
+          Width = 100
+          Max = 5
+          Min = 2
+          OnChange = G_IntensitasChange
+          Position = 2
+          TabOrder = 11
+        end
+        object Gpcd: TLabel
+          Left = 352
+          Height = 15
+          Top = 130
+          Width = 8
+          Caption = 'G'
+        end
+        object BinerValue: TLabel
+          Left = 555
+          Height = 15
+          Top = 16
+          Width = 18
+          Caption = '127'
+        end
+        object BrightnessValue: TLabel
+          Left = 555
+          Height = 15
+          Top = 48
+          Width = 6
+          Caption = '0'
+        end
+        object P_Value: TLabel
+          Left = 555
+          Height = 15
+          Top = 96
+          Width = 18
+          Caption = '127'
+        end
+        object G_Value: TLabel
+          Left = 472
+          Height = 15
+          Top = 128
+          Width = 6
+          Caption = '2'
+        end
+        object Label11: TLabel
+          Left = 352
+          Height = 15
+          Top = 96
+          Width = 7
+          Caption = 'P'
+        end
+      end
+    end
+    object TabSheetFiltering: TTabSheet
+      Caption = 'Filtering'
+      ClientHeight = 244
+      ClientWidth = 616
+      ParentFont = False
+      object Label2: TLabel
+        Left = 16
+        Height = 21
+        Top = 24
+        Width = 53
+        Caption = 'Kernel:'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Kernel00: TEdit
+        Left = 16
+        Height = 24
+        Top = 64
+        Width = 40
+        Alignment = taCenter
+        AutoSize = False
+        ParentFont = False
+        TabOrder = 0
+      end
+      object Kernel10: TEdit
+        Left = 64
+        Height = 24
+        Top = 64
+        Width = 40
+        Alignment = taCenter
+        AutoSize = False
+        ParentFont = False
+        TabOrder = 1
+      end
+      object Kernel20: TEdit
+        Left = 112
+        Height = 24
+        Top = 64
+        Width = 40
+        Alignment = taCenter
+        AutoSize = False
+        ParentFont = False
+        TabOrder = 2
+      end
+      object Kernel01: TEdit
+        Left = 16
+        Height = 24
+        Top = 96
+        Width = 40
+        Alignment = taCenter
+        AutoSize = False
+        ParentFont = False
+        TabOrder = 3
+      end
+      object Kernel11: TEdit
+        Left = 64
+        Height = 24
+        Top = 96
+        Width = 40
+        Alignment = taCenter
+        AutoSize = False
+        ParentFont = False
+        TabOrder = 4
+      end
+      object Kernel21: TEdit
+        Left = 112
+        Height = 24
+        Top = 96
+        Width = 40
+        Alignment = taCenter
+        AutoSize = False
+        ParentFont = False
+        TabOrder = 5
+      end
+      object Kernel02: TEdit
+        Left = 16
+        Height = 24
+        Top = 128
+        Width = 40
+        Alignment = taCenter
+        AutoSize = False
+        ParentFont = False
+        TabOrder = 6
+      end
+      object Kernel12: TEdit
+        Left = 64
+        Height = 24
+        Top = 128
+        Width = 40
+        Alignment = taCenter
+        AutoSize = False
+        ParentFont = False
+        TabOrder = 7
+      end
+      object Kernel22: TEdit
+        Left = 112
+        Height = 24
+        Top = 128
+        Width = 40
+        Alignment = taCenter
+        AutoSize = False
+        ParentFont = False
+        TabOrder = 8
+      end
+      object Label3: TLabel
+        Left = 208
+        Height = 17
+        Top = 16
+        Width = 106
+        Caption = 'Pre-made Kernel:'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -13
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object ComboBoxKernel: TComboBox
+        Left = 320
+        Height = 23
+        Top = 16
+        Width = 288
+        ItemHeight = 15
+        Items.Strings = (
+          'Deteksi titik'
+          'Deteksi garis horizontal'
+          'Deteksi garis vertikal'
+          'Deteksi garis diagonal kiri atas ke kanan bawah'
+          'Deteksi garis diagonal kanan atas ke kiri bawah'
+          'Sharpening'
+          'Emboss'
+          'Emboss dari kiri atas'
+          'Emboss dari kiri'
+          'Emboss dari kanan bawah'
+          'Emboss dari kanan'
+          'Smoothing'
+        )
+        OnChange = ComboBoxKernelChange
+        ParentFont = False
+        TabOrder = 9
+        Text = 'Pilih kernel'
+      end
+      object ButtonKernel: TButton
+        Left = 16
+        Height = 25
+        Top = 168
+        Width = 75
+        Caption = 'Apply'
+        OnClick = ButtonKernelClick
+        ParentFont = False
+        TabOrder = 10
+      end
+    end
+    object TabSheetMorfologi: TTabSheet
+      Caption = 'Morfologi'
+      ClientHeight = 244
+      ClientWidth = 616
+      ParentFont = False
+      object ComboBox1: TComboBox
+        Left = 19
+        Height = 23
+        Top = 64
+        Width = 32
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'x'
+          '0'
+          '1'
+        )
+        ParentFont = False
+        TabOrder = 0
+        Text = 'x'
+      end
+      object ComboBox2: TComboBox
+        Left = 64
+        Height = 23
+        Top = 64
+        Width = 32
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'x'
+          '0'
+          '1'
+        )
+        ParentFont = False
+        TabOrder = 1
+        Text = 'x'
+      end
+      object ComboBox3: TComboBox
+        Left = 109
+        Height = 23
+        Top = 64
+        Width = 32
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'x'
+          '0'
+          '1'
+        )
+        ParentFont = False
+        TabOrder = 2
+        Text = 'x'
+      end
+      object ComboBox4: TComboBox
+        Left = 19
+        Height = 23
+        Top = 96
+        Width = 32
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'x'
+          '0'
+          '1'
+        )
+        ParentFont = False
+        TabOrder = 3
+        Text = 'x'
+      end
+      object ComboBox5: TComboBox
+        Left = 64
+        Height = 23
+        Top = 96
+        Width = 32
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'x'
+          '0'
+          '1'
+        )
+        ParentFont = False
+        TabOrder = 4
+        Text = 'x'
+      end
+      object ComboBox6: TComboBox
+        Left = 109
+        Height = 23
+        Top = 96
+        Width = 32
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'x'
+          '0'
+          '1'
+        )
+        ParentFont = False
+        TabOrder = 5
+        Text = 'x'
+      end
+      object ComboBox7: TComboBox
+        Left = 19
+        Height = 23
+        Top = 128
+        Width = 32
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'x'
+          '0'
+          '1'
+        )
+        ParentFont = False
+        TabOrder = 6
+        Text = 'x'
+      end
+      object ComboBox8: TComboBox
+        Left = 64
+        Height = 23
+        Top = 128
+        Width = 32
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'x'
+          '0'
+          '1'
+        )
+        ParentFont = False
+        TabOrder = 7
+        Text = 'x'
+      end
+      object ComboBox9: TComboBox
+        Left = 109
+        Height = 23
+        Top = 128
+        Width = 32
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'x'
+          '0'
+          '1'
+        )
+        ParentFont = False
+        TabOrder = 8
+        Text = 'x'
+      end
+      object ComboBoxOperator: TComboBox
+        Left = 184
+        Height = 23
+        Top = 88
+        Width = 109
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'Erosi (AND)'
+          'Dilasi (OR)'
+          'Opening'
+          'Closing'
+        )
+        ParentFont = False
+        TabOrder = 9
+        Text = 'Erosi (AND)'
+      end
+      object Proses: TButton
+        Left = 19
+        Height = 25
+        Top = 168
+        Width = 75
+        Caption = 'Apply'
+        OnClick = ProsesClick
+        ParentFont = False
+        TabOrder = 10
+      end
+      object CheckBox2: TCheckBox
+        Left = 184
+        Height = 19
+        Top = 132
+        Width = 115
+        Caption = 'Background Putih'
+        ParentFont = False
+        TabOrder = 11
+      end
+      object Label5: TLabel
+        Left = 19
+        Height = 21
+        Top = 24
+        Width = 71
+        Caption = 'Kernel SE'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -16
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label10: TLabel
+        Left = 184
+        Height = 20
+        Top = 64
+        Width = 61
+        Caption = 'Operasi :'
+        Font.CharSet = ANSI_CHARSET
+        Font.Height = -15
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+    end
+    object TabSheetOperasi: TTabSheet
+      Caption = 'Operasi'
+      ClientHeight = 244
+      ClientWidth = 616
+      ParentFont = False
+      object OperasiLogika: TComboBox
+        Left = 312
+        Height = 23
+        Top = 128
+        Width = 160
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'AND'
+          'OR'
+          'NAND'
+          'NOR'
+          'XOR'
+          'XNOR'
+        )
+        ParentFont = False
+        TabOrder = 0
+        Text = 'AND'
+      end
+      object Proses2: TButton
+        Left = 136
+        Height = 25
+        Top = 128
+        Width = 168
+        Caption = 'Logika Biner'
+        OnClick = Proses2Click
+        ParentFont = False
+        TabOrder = 1
+      end
+      object TrackBar1: TTrackBar
+        Left = 224
+        Height = 25
+        Top = 16
+        Width = 260
+        Max = 255
+        OnChange = TrackBar1Change
+        Position = 127
+        TabOrder = 2
+      end
+      object TrackBar2: TTrackBar
+        Left = 224
+        Height = 25
+        Top = 48
+        Width = 260
+        Max = 255
+        OnChange = TrackBar2Change
+        Position = 127
+        TabOrder = 3
+      end
+      object Label6: TLabel
+        Left = 72
+        Height = 15
+        Top = 16
+        Width = 150
+        Caption = 'Threshold Biner Citra Proses:'
+      end
+      object Label7: TLabel
+        Left = 42
+        Height = 15
+        Top = 48
+        Width = 180
+        Caption = 'Threshold Biner Citra Augmentasi:'
+      end
+      object Label8: TLabel
+        Left = 488
+        Height = 15
+        Top = 16
+        Width = 18
+        Caption = '127'
+      end
+      object Label9: TLabel
+        Left = 488
+        Height = 15
+        Top = 48
+        Width = 18
+        Caption = '127'
+      end
+      object ButtonAritGray: TButton
+        Left = 136
+        Height = 25
+        Top = 168
+        Width = 168
+        Caption = 'Aritmatika Grayscale'
+        OnClick = ButtonAritGrayClick
+        TabOrder = 4
+      end
+      object ButtonAritBin: TButton
+        Left = 136
+        Height = 25
+        Top = 208
+        Width = 168
+        Caption = 'Aritmatika Biner'
+        OnClick = ButtonAritBinClick
+        TabOrder = 5
+      end
+      object ComboBoxAritGray: TComboBox
+        Left = 312
+        Height = 23
+        Top = 168
+        Width = 160
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          '+ (Penjumlahan)'
+          '- (Pengurangan)'
+          'x (Perkalian)'
+          ': (Pembagian)'
+        )
+        OnChange = ComboBoxAritGrayChange
+        TabOrder = 6
+        Text = '+ (Penjumlahan)'
+      end
+      object ComboBoxAritBin: TComboBox
+        Left = 312
+        Height = 23
+        Top = 208
+        Width = 160
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          '+ (Penjumlahan)'
+          '- (Pengurangan)'
+          'x (Perkalian)'
+          ': (Pembagian)'
+        )
+        TabOrder = 7
+        Text = '+ (Penjumlahan)'
+      end
+    end
+    object TabSheetBlending: TTabSheet
+      Caption = 'Blending'
+      ClientHeight = 244
+      ClientWidth = 616
+      ParentFont = False
+      object ButtonImageBlending: TButton
+        Left = 128
+        Height = 25
+        Top = 104
+        Width = 118
+        Caption = 'Image Blending'
+        OnClick = ButtonImageBlendingClick
+        TabOrder = 0
+      end
+      object TrackBarBlending: TTrackBar
+        Left = 264
+        Height = 25
+        Top = 104
+        Width = 168
+        Max = 9
+        Min = 1
+        OnChange = TrackBarBlendingChange
+        Position = 1
+        TabOrder = 1
+      end
+      object LabelImageBlending: TLabel
+        Left = 448
+        Height = 15
+        Top = 104
+        Width = 25
+        Caption = '10 %'
+      end
+    end
+  end
+  object ButtonLoad: TButton
+    Left = 24
+    Height = 25
+    Top = 11
+    Width = 75
+    Caption = 'Load'
+    OnClick = ButtonLoadClick
+    ParentFont = False
+    TabOrder = 1
+  end
+  object ButtonSave: TButton
+    Left = 179
+    Height = 25
+    Top = 11
+    Width = 75
+    Caption = 'Save'
+    OnClick = ButtonSaveClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object ButtonRestore: TButton
+    Left = 102
+    Height = 25
+    Top = 11
+    Width = 75
+    Caption = 'Restore'
+    OnClick = ButtonRestoreClick
+    ParentFont = False
+    TabOrder = 3
+  end
+  object PanelImage: TPanel
+    Left = 24
+    Height = 352
+    Top = 352
+    Width = 624
+    BorderStyle = bsSingle
+    ClientHeight = 348
+    ClientWidth = 620
+    ParentFont = False
+    TabOrder = 4
+    OnClick = PanelImageClick
+    object ScrollBox1: TScrollBox
+      Left = 8
+      Height = 336
+      Top = 8
+      Width = 600
+      HorzScrollBar.Page = 72
+      VertScrollBar.Page = 72
+      ClientHeight = 332
+      ClientWidth = 596
+      ParentFont = False
+      TabOrder = 0
+      object Image1: TImage
+        Left = 8
+        Height = 64
+        Top = 8
+        Width = 64
+        AutoSize = True
+      end
+    end
+    object ScrollBox2: TScrollBox
+      Left = 320
+      Height = 288
+      Top = 56
+      Width = 288
+      HorzScrollBar.Page = 72
+      VertScrollBar.Page = 72
+      ClientHeight = 284
+      ClientWidth = 284
+      ParentFont = False
+      TabOrder = 1
+      Visible = False
+      object Image2: TImage
+        Left = 8
+        Height = 64
+        Top = 8
+        Width = 64
+        AutoSize = True
+      end
+    end
+    object LabelTImage1: TLabel
+      Left = 104
+      Height = 25
+      Top = 16
+      Width = 105
+      Caption = 'Citra Proses'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -19
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+      Visible = False
+    end
+    object LabelTImage2: TLabel
+      Left = 392
+      Height = 25
+      Top = 16
+      Width = 153
+      Caption = 'Citra Augmentasi'
+      Font.CharSet = ANSI_CHARSET
+      Font.Height = -19
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentFont = False
+      Visible = False
+    end
+  end
+  object ButtonUndo: TButton
+    Left = 102
+    Height = 25
+    Top = 38
+    Width = 75
+    Caption = 'Undo'
+    Enabled = False
+    OnClick = ButtonUndoClick
+    ParentFont = False
+    TabOrder = 5
+  end
+  object Load2: TButton
+    Left = 24
+    Height = 25
+    Top = 38
+    Width = 75
+    Caption = 'Load2'
+    Enabled = False
+    OnClick = Load2Click
+    ParentFont = False
+    TabOrder = 6
+  end
+  object SavePictureDialog1: TSavePictureDialog
+    Left = 408
+  end
+  object OpenPictureDialog1: TOpenPictureDialog
+    Left = 328
+  end
+  object OpenPictureDialog2: TOpenPictureDialog
+    Left = 366
+  end
+end

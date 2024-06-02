@@ -1,0 +1,120 @@
+object FormUtama: TFormUtama
+  Left = 256
+  Height = 384
+  Top = 145
+  Width = 572
+  Caption = 'Peraga Kuantisasi'
+  ClientHeight = 384
+  ClientWidth = 572
+  LCLVersion = '2.2.0.1'
+  object ButtonLoad: TButton
+    Left = 8
+    Height = 25
+    Top = 8
+    Width = 75
+    Caption = 'Load'
+    OnClick = ButtonLoadClick
+    TabOrder = 0
+  end
+  object ButtonSave: TButton
+    Left = 8
+    Height = 25
+    Top = 40
+    Width = 75
+    Caption = 'Save'
+    OnClick = ButtonSaveClick
+    TabOrder = 1
+  end
+  object ImageAsli: TImage
+    Left = 8
+    Height = 90
+    Top = 120
+    Width = 90
+    AutoSize = True
+  end
+  object ButtonProses: TButton
+    Left = 88
+    Height = 25
+    Top = 8
+    Width = 75
+    Caption = 'Proses'
+    OnClick = ButtonProsesClick
+    TabOrder = 2
+  end
+  object ButtonClose: TButton
+    Left = 88
+    Height = 25
+    Top = 40
+    Width = 75
+    Caption = 'Close'
+    OnClick = ButtonCloseClick
+    TabOrder = 3
+  end
+  object ImageHasil: TImage
+    Left = 112
+    Height = 90
+    Top = 120
+    Width = 90
+    AutoSize = True
+  end
+  object RadioGroupKuantisasi: TRadioGroup
+    Left = 168
+    Height = 105
+    Top = 8
+    Width = 80
+    AutoFill = True
+    Caption = 'Kuantisasi'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 85
+    ClientWidth = 76
+    ItemIndex = 0
+    Items.Strings = (
+      'RGB 3 Bit'
+      'RGB 4 Bit'
+      'RGB 8 Bit'
+      'RGB 16 Bit'
+    )
+    OnClick = RadioGroupKuantisasiClick
+    TabOrder = 4
+  end
+  object RadioGroupKonversiWarna: TRadioGroup
+    Left = 248
+    Height = 105
+    Top = 8
+    Width = 208
+    AutoFill = True
+    Caption = 'Konversi Warna'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 85
+    ClientWidth = 204
+    ItemIndex = 0
+    Items.Strings = (
+      'batas atas - tengah - batas bawah'
+      'batas bawah'
+      'batas atas'
+    )
+    TabOrder = 5
+  end
+  object OpenPictureDialog1: TOpenPictureDialog
+    Left = 504
+    Top = 280
+  end
+  object SavePictureDialog1: TSavePictureDialog
+    FileName = 'C:\Data\UBM\2021-2022 ganjil\training lazarus 5PTI51\contoh.ico'
+    InitialDir = 'C:\Data\UBM\2021-2022 ganjil\training lazarus 5PTI51\'
+    Left = 400
+    Top = 256
+  end
+end

@@ -34,7 +34,7 @@ Just run the executable project1.exe
 
 ## Screenshot
 
-![Uploading image.png…]()
+<img width="672" height="743" alt="image" src="https://github.com/user-attachments/assets/6a1bea3c-2098-4037-bf9f-cb4d50958e27" />
 
 ## Note
 Only works with .bmp images
